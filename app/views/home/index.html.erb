@@ -1,6 +1,6 @@
 <h1>Homepage</h1>
 <br>
-<% if user_signed_in? && admin_signed_in?%>
+<% if user_signed_in? || admin_signed_in?%>
   <%= link_to "User Log Out",  destroy_user_session_path, method: :delete %>
   <%= link_to "User Profile",  edit_user_registration_path %>
   <br>
