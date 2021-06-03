@@ -1,0 +1,58 @@
+<%= form_with(model: customer) do |form| %>
+  <% if customer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(customer.errors.count, "error") %> prohibited this customer from being saved:</h2>
+
+      <ul>
+        <% customer.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :contact %>
+    <%= form.telephone_field :contact %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.email_field :email %>
+  </div>
+
+  <div class="field">
+    <% @customer.customer_ic.each do |p|%>
+     <%= image_tag p %>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= form.label :customer_ic %>
+    <%= form.file_field :customer_ic %>
+  </div>
+
+  <div class="field">
+    <% @customer.customer_license.each do |p|%>
+     <%= image_tag p %>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= form.label :customer_license %>
+    <%= form.file_field :customer_license %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :booking_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -75,5 +75,13 @@ Rails.application.configure do
   # config.action_cable.disable_request_forgery_protection = true
 
   #In production, :host should be set to the actual host of your application.
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  config.action_mailer.default_url_options = { host: 'smtp.mailgun.org', port: 587 }
+  # config.action_mailer.delivery_method = :mailgun
+  # config.action_mailer.mailgun_settings = {
+  #   SMTP hostname: smtp.mailgun.org
+  #   Port: 587
+  #   Username: postmaster@sandbox49b992184ee14b97852b3c94215d3bbd.mailgun.org
+  #   Default password: 896633048bb86ed06d494a051e65f638-1d8af1f4-72aca108
+  # }
 end

@@ -1,1 +1,9 @@
-show bookings 
+show bookings detail
+
+<p>start date: <%= @booking.start_date %> </p>
+
+<p>end date: <%= @booking.end_date %> </p>
+
+<p>days: <%= @days %> </p>
+
+<%= link_to 'Add Customer Detail', new_customer_path %>
