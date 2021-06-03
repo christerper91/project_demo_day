@@ -72,12 +72,14 @@ ActiveRecord::Schema.define(version: 2021_06_03_042505) do
 
   create_table "customers", force: :cascade do |t|
     t.bigint "booking_id"
+    t.bigint "user_id"
     t.string "name"
     t.integer "contact"
     t.string "email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["booking_id"], name: "index_customers_on_booking_id"
+    t.index ["user_id"], name: "index_customers_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -100,4 +102,5 @@ ActiveRecord::Schema.define(version: 2021_06_03_042505) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "users"
   add_foreign_key "customers", "bookings"
+  add_foreign_key "customers", "users"
 end
