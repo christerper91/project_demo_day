@@ -1,1 +1,29 @@
 this is customer show pages
+
+
+<p><strong>show bookings detail</strong></p>
+
+<p>start date: <%= @booking.start_date %> </p>
+
+<p>end date: <%= @booking.end_date %> </p>
+
+<p>pickup location: <%= @booking.pickup_location %> </p>
+
+<p>dropoff location: <%= @booking.dropoff_location %> </p>
+
+<p>Rental days: <%= @days %> days </p>
+
+
+<strong>customer detail below</strong>
+
+<p>name : <%= @customer.name %> </p>
+
+<p>contact : <%= @customer.contact %> </p>
+
+<p>email : <%= @customer.email %> </p>
+
+<p>customer ic : <%= image_tag @customer.customer_ic %> </p>
+
+<p>customer license : <%= image_tag @customer.customer_license %> </p>
+
+<%# <%= link_to 'Add Suplier Detail', new_supplier_path(customer_id: @customer.id) %> %>

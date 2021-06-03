@@ -5,6 +5,8 @@ class CustomersController < ApplicationController
 
   def show
     @customer = Customer.find(params[:id])
+    @booking = @customer.booking
+    @days = (@booking.end_date - @booking.start_date).floor/(60*60*24) 
   end
 
   def new
