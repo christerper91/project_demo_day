@@ -10,7 +10,7 @@ class SuppliersController < ApplicationController
   end
 
   def new
-    @supplier = Supplier.new(customer_id: params[:customer_id])
+    @supplier = Supplier.new(customer_id: params[:customer_id], booking_id: params[:booking_id])
   end
 
   def edit
