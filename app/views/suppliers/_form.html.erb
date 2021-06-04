@@ -1,0 +1,50 @@
+<%= form_with(model: supplier) do |form| %>
+  <% if supplier.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(supplier.errors.count, "error") %> prohibited this supplier from being saved:</h2>
+
+      <ul>
+        <% supplier.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :company_name %>
+    <%= form.text_field :company_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :company_contact %>
+    <%= form.telephone_field :company_contact %>
+  </div>
+
+  <div class="field">
+    <%= form.label :company_email %>
+    <%= form.email_field :company_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :company_bank_account %>
+    <%= form.text_field :company_bank_account %>
+  </div>
+
+  <div class="field">
+    <%= form.label :company_number_account %>
+    <%= form.number_field :company_number_account %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :customer_id %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :booking_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
