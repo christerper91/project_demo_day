@@ -1,0 +1,39 @@
+this show pages all customer
+
+
+<h1>Customers List</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Customer Name</th>
+      <th>Contact</th>
+      <th>Email</th>
+      <th>Customer Ic</th>
+      <th>Customer License</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+      <% @customers.each do |b| %>
+        <tr>
+          <td><%= b.name %></td>
+          <td><%= b.contact %></td>
+          <td><%= b.email %></td>
+          <td><%= image_tag b.customer_ic %></td>
+          <td><%= image_tag b.customer_license %></td>
+          <td><%= link_to 'Show', b %></td>
+          <td><%= link_to 'Edit', edit_customer_path(b) %></td>
+          <td><%= link_to 'Destroy', b, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Booking', new_booking_path %>
+<%= link_to 'Back', root_path %>
