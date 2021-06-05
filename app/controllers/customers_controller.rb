@@ -4,9 +4,13 @@ class CustomersController < ApplicationController
   end
 
   def show
-    @customer = Customer.find(params[:id])
-    @booking = @customer.booking
-    @days = (@booking.end_date - @booking.start_date).floor/(60*60*24) 
+    if user_signed_in?
+      @customer = Customer.find(params[:id])
+      @booking = @customer.booking
+      @days = (@booking.end_date - @booking.start_date).floor/(60*60*24)
+    else
+      redirect_to root_path, notice: "You must login to view this pages"
+    end
   end
 
   def new
