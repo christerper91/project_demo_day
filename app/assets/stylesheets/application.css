@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+ div.container {
+   margin-left: auto;
+   margin-right: auto;
+   width: 60%;
+   /* padding: 50px; */
+   /* margin-top: 50px; */
+   text-align: center;
+   display: center;
+   /* image-orientation: center; */
+   /* border: 10px solid black; */
+   /* background-color: #92a8d1; */
+ }
