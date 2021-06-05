@@ -46,9 +46,9 @@ this is supplier show pages
 
       <p>email : <%= @supplier.company_email %> </p>
 
-      <p>email : <%= @supplier.company_bank_account %> </p>
+      <p>company bank account : <%= @supplier.company_bank_account %> </p>
 
-      <p>email : <%= @supplier.company_number_account %> </p>
+      <p>company number account : <%= @supplier.company_number_account %> </p>
 
     </div>
 
@@ -56,12 +56,5 @@ this is supplier show pages
 
   </div>
 </div>
-
-<%= @detail.inspect %>
-<br>
-booking id = <%= @detail.booking_id %>
-<br>
-customer id = <%= @detail.id %>
-<br>
 
 <%= link_to 'Add Car Detail', new_car_path(customer_id: @detail.id, booking_id: @detail.booking_id, supplier_id: @supplier.id) %>
