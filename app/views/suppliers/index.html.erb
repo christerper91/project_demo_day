@@ -1,0 +1,39 @@
+this show pages all supplier
+
+
+<h1>suppliers List</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Company Name</th>
+      <th>Company Contact</th>
+      <th>Company Email</th>
+      <th>Customer Bank Account</th>
+      <th>Company Number Account</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+      <% @suppliers.each do |b| %>
+        <tr>
+          <td><%= b.company_name %></td>
+          <td><%= b.company_contact %></td>
+          <td><%= b.company_email %></td>
+          <td><%= b.company_bank_account %></td>
+          <td><%= b.company_number_account %></td>
+          <td><%= link_to 'Show', b %></td>
+          <td><%= link_to 'Edit', edit_supplier_path(b) %></td>
+          <td><%= link_to 'Destroy', b, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Booking', new_booking_path %>
+<%= link_to 'Back', root_path %>
