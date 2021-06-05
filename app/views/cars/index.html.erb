@@ -1,27 +1,26 @@
-
-<h1>Bookings List</h1>
+<h1>Cars List</h1>
 
 <table class= "table table-striped table-hover table-bordered ">
   <thead class="table-dark">
     <tr>
-      <th>Start Date</th>
-      <th>End Date</th>
-      <th>Pickup Location</th>
-      <th>Dropoff Location</th>
+      <th>Type Of Car</th>
+      <th>Car Plate No</th>
+      <th>Car Agent Rate</th>
+      <th>Car Rental Rate</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
 
-      <% @bookings.each do |b| %>
+      <% @cars.each do |b| %>
         <tr>
-          <td><%= b.start_date %></td>
-          <td><%= b.end_date %></td>
-          <td><%= b.pickup_location %></td>
-          <td><%= b.dropoff_location %></td>
+          <td><%= b.type_of_car %></td>
+          <td><%= b.car_plate_no %></td>
+          <td><%= b.car_agent_rate %></td>
+          <td><%= b.car_selling_rate %></td>
           <td><%= link_to 'Show', b %></td>
-          <td><%= link_to 'Edit', edit_booking_path(b) %></td>
+          <td><%= link_to 'Edit', edit_car_path(b) %></td>
           <td><%= link_to 'Destroy', b, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
