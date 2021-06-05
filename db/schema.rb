@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_04_035808) do
+ActiveRecord::Schema.define(version: 2021_06_05_075615) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,6 +70,23 @@ ActiveRecord::Schema.define(version: 2021_06_04_035808) do
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
+  create_table "cars", force: :cascade do |t|
+    t.bigint "booking_id"
+    t.bigint "user_id"
+    t.bigint "customer_id"
+    t.bigint "supplier_id"
+    t.string "type_of_car"
+    t.string "car_plate_no"
+    t.integer "car_agent_rate"
+    t.integer "car_selling_rate"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["booking_id"], name: "index_cars_on_booking_id"
+    t.index ["customer_id"], name: "index_cars_on_customer_id"
+    t.index ["supplier_id"], name: "index_cars_on_supplier_id"
+    t.index ["user_id"], name: "index_cars_on_user_id"
+  end
+
   create_table "customers", force: :cascade do |t|
     t.bigint "booking_id"
     t.bigint "user_id"
@@ -117,6 +134,10 @@ ActiveRecord::Schema.define(version: 2021_06_04_035808) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "users"
+  add_foreign_key "cars", "bookings"
+  add_foreign_key "cars", "customers"
+  add_foreign_key "cars", "suppliers"
+  add_foreign_key "cars", "users"
   add_foreign_key "customers", "bookings"
   add_foreign_key "customers", "users"
   add_foreign_key "suppliers", "bookings"

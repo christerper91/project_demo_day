@@ -4,4 +4,5 @@ class Customer < ApplicationRecord
   has_one_attached :customer_ic
   has_one_attached :customer_license
   has_one :supplier
+  has_one :car 
 end

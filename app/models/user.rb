@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_many :customers, dependent: :destroy
   has_many :suppliers, dependent: :destroy
+  has_many :cars, dependent: :destroy
 end
