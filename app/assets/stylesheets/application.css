@@ -26,3 +26,11 @@
    /* border: 10px solid black; */
    /* background-color: #92a8d1; */
  }
+
+ .login > .card {
+   width: auto;
+   margin-left: auto;
+   margin-right: auto;
+   float: none;
+
+ }
