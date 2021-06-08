@@ -11,27 +11,27 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :start_date %>
-    <%= form.datetime_local_field :start_date %>
+    <%= form.datetime_local_field :start_date, class:"form-control"%>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :end_date %>
-    <%= form.datetime_local_field :end_date %>
+    <%= form.datetime_local_field :end_date, class:"form-control"%>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :pickup_location %>
-    <%= form.text_field :pickup_location %>
+    <%= form.text_field :pickup_location, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :dropoff_location %>
-    <%= form.text_field :dropoff_location %>
+    <%= form.text_field :dropoff_location, class:"form-control" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: 'tn btn-primary'%>
   </div>
 <% end %>
