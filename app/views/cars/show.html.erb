@@ -6,6 +6,7 @@ this is car show pages
     <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Customer Detail</button>
     <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Supplier Detail</button>
     <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Car Detail</button>
+    <button class="nav-link" id="v-pills-summarys-tab" data-bs-toggle="pill" data-bs-target="#v-pills-summarys" type="button" role="tab" aria-controls="v-pills-summarys" aria-selected="false">Summary</button>
   </div>
   <div class="tab-content" id="v-pills-tabContent">
     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
@@ -114,6 +115,30 @@ this is car show pages
             <td><p><%= @car.car_agent_rate %> </p></td>
 
             <td><p><%= @car.car_selling_rate %> </p></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tab-pane fade" id="v-pills-summarys" role="tabpanel" aria-labelledby="v-pills-summarys-tab">
+
+      <strong>Summary</strong>
+      <table class= "table table-striped table-hover table-bordered ">
+        <thead class="table-dark">
+          <tr>
+            <th>Total Amount To Collect</th>
+            <th>Total Amount To Pay Supplier</th>
+            <th>Profit</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><p><%= @total_amount_collect %> </p></td>
+            <td><p><%= @total_amount_to_pay_supplier %> </p></td>
+            <td><p><%= @profit %> </p></td>
+
+
           </tr>
         </tbody>
       </table>

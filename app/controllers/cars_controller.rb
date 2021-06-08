@@ -7,6 +7,9 @@ class CarsController < ApplicationController
     @car = Car.find(params[:id])
     @detail = @car.booking.customer.supplier
     @days = (@detail.booking.end_date - @detail.booking.start_date).floor/(60*60*24)
+    @total_amount_collect = @days * @car.car_selling_rate
+    @total_amount_to_pay_supplier =  @car.car_agent_rate * @days
+    @profit = @total_amount_collect - @total_amount_to_pay_supplier
   end
 
   def new

@@ -1,11 +1,38 @@
-show bookings detail
 
-<p>start date: <%= @booking.start_date %> </p>
+<div class="d-flex align-items-start">
+  <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+    <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Booking Detail</button>
+  </div>
+  <div class="tab-content" id="v-pills-tabContent">
+    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+      <p><strong>Show Bookings Detail</strong> </p>
+      <table class= "table table-striped table-hover table-bordered">
+        <thead class="table-dark">
+          <tr>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Pickup Location</th>
+            <th>Dropoff Location</th>
+            <th>Rental Days</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><p><%= @booking.start_date %> </p></td><
 
-<p>end date: <%= @booking.end_date %> </p>
+            <td><p><%= @booking.end_date %> </p></td>
 
-<p>days: <%= @days %> </p>
+            <td><p><%= @booking.pickup_location %> </p></td>
+
+            <td><p><%= @booking.dropoff_location %> </p></td>
+
+            <td><p><%= @days %> days </p></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
 
 <%= link_to 'Add Customer Detail', new_customer_path(booking_id: @booking.id) %>
-
-<%= link_to 'show all customer detail', customers_path %>
