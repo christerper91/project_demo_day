@@ -11,36 +11,36 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field mb-3">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field mb-3">
     <%= form.label :contact %>
-    <%= form.telephone_field :contact %>
+    <%= form.telephone_field :contact, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field mb-3">
     <%= form.label :email %>
-    <%= form.email_field :email %>
+    <%= form.email_field :email, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field mb-3">
     <%= form.label :customer_ic %>
-    <%= form.file_field :customer_ic %>
+    <%= form.file_field :customer_ic, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field mb-3">
     <%= form.label :customer_license %>
-    <%= form.file_field :customer_license %>
+    <%= form.file_field :customer_license, class:"form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.hidden_field :booking_id %>
+  <div class="field mb-3">
+    <%= form.hidden_field :booking_id, class:"form-control" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Next", class: 'btn btn-primary'%>
   </div>
 <% end %>

@@ -22,8 +22,13 @@ class CarsController < ApplicationController
 
   def create
     @car = current_user.cars.build(car_params)
+    @detail = @car.booking.customer.supplier
+    @days = (@detail.booking.end_date - @detail.booking.start_date).floor/(60*60*24)
+    @total_amount_collect = @days * @car.car_selling_rate
+    @total_amount_to_pay_supplier =  @car.car_agent_rate * @days
+    @profit = @total_amount_collect - @total_amount_to_pay_supplier
     if @car.save
-      redirect_to @car, notice: "car was successfully created"
+      render :show, notice: "car was successfully created"
     else
       render :new, status: :unprocessable_entity
     end

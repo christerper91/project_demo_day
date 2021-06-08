@@ -20,7 +20,7 @@ class BookingsController < ApplicationController
   def create
     @booking = current_user.bookings.build(booking_params)
     if @booking.save
-      redirect_to @booking, notice: "Booking was successfully created"
+      redirect_to new_customer_url(booking_id: @booking.id), notice: "Booking was successfully created, Add Your Customer Detail"
     else
       render :new, status: :unprocessable_entity
     end

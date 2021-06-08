@@ -23,8 +23,9 @@ class CustomersController < ApplicationController
 
   def create
     @customer = current_user.customers.build(customer_params)
+    @booking = @customer.booking
     if @customer.save
-      redirect_to @customer, notice: "Customer was successfully created"
+      redirect_to new_supplier_url(customer_id: @customer.id, booking_id: @booking.id), notice: "Customer was successfully created, Please Add Your Supplier "
     else
       render :new, status: :unprocessable_entity
     end

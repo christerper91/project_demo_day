@@ -19,8 +19,9 @@ class SuppliersController < ApplicationController
 
   def create
     @supplier = current_user.suppliers.build(supplier_params)
+    @detail = @supplier.booking.customer
     if @supplier.save
-      redirect_to @supplier, notice: "supplier was successfully created"
+      redirect_to new_car_path(customer_id: @detail.id, booking_id: @detail.booking_id, supplier_id: @supplier.id), notice: "supplier was successfully created, Add your Car Detail"
     else
       render :new, status: :unprocessable_entity
     end
