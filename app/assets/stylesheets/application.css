@@ -13,6 +13,16 @@
  *= require_tree .
  *= require_self
  */
+ body{
+   background-color: #ADD8E6;
+ }
+
+ img {
+   max-width: 100%;
+   height: auto;
+   border-radius: 15%;
+
+ }
 
  div.container.yield {
   margin-left: auto;
