@@ -31,7 +31,7 @@ Rails.application.configure do
   end
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
-  config.active_storage.service = :local
+  config.active_storage.service = :amazon
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
@@ -77,11 +77,5 @@ Rails.application.configure do
   #In production, :host should be set to the actual host of your application.
 
   config.action_mailer.default_url_options = { host: 'smtp.mailgun.org', port: 587 }
-  # config.action_mailer.delivery_method = :mailgun
-  # config.action_mailer.mailgun_settings = {
-  #   SMTP hostname: smtp.mailgun.org
-  #   Port: 587
-  #   Username: postmaster@sandbox49b992184ee14b97852b3c94215d3bbd.mailgun.org
-  #   Default password: 896633048bb86ed06d494a051e65f638-1d8af1f4-72aca108
-  # }
+
 end
