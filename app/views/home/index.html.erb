@@ -1,40 +1,46 @@
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-
+<% if user_signed_in? || admin_signed_in?%>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 
-<!-- Header -->
-<header class="w3-display-container w3-content w3-wide" style="max-width:auto" id="home">
-  <div class="w3-display-bottomcentre w3-padding-large w3-opacity">
-    <h1 class="w3-xxlarge"><strong>
-      Internal Booking Management</h1>
-    </strong>
-  </div>
-  <hr>
-</header>
 
-<!-- Page content -->
-<div class="w3-content" style="max-width:auto">
 
-  <!-- About Section -->
-  <div class="w3-row w3-padding-64" id="about">
-    <div class="w3-col m6 w3-padding-large w3-hide-small">
-      <%= image_tag "File-Management.jpg" %>
+  <!-- Header -->
+  <header class="w3-display-container w3-content w3-wide" style="max-width:auto" id="home">
+    <div class="w3-display-bottomcentre w3-padding-large w3-opacity">
+      <h1 class="w3-xxlarge"><strong>
+        Internal Booking Management</h1>
+      </strong>
+    </div>
+    <hr>
+  </header>
+
+  <!-- Page content -->
+  <div class="w3-content" style="max-width:auto">
+
+    <!-- About Section -->
+    <div class="w3-row w3-padding-64" id="about">
+      <div class="w3-col m6 w3-padding-large w3-hide-small">
+        <%= image_tag "File-Management.jpg" %>
+      </div>
+
+      <div class="w3-col m6 w3-padding-large">
+        <h1 class="w3-center">About System  </h1><br>
+        <h5 class="w3-center">Context</h5>
+        <p class="w3-large">Organize confirm booking - allocate available car from which supplier/own to avoid misbooking/double booking on a single car for operation team to deliver and reduce Poor communication between sales team, operation team & supplier. No proper summary to view and allocate job to a specific car for car rental provider.</p>
+      </div>
     </div>
 
-    <div class="w3-col m6 w3-padding-large">
-      <h1 class="w3-center">About System  </h1><br>
-      <h5 class="w3-center">Context</h5>
-      <p class="w3-large">Organize confirm booking - allocate available car from which supplier/own to avoid misbooking/double booking on a single car for operation team to deliver and reduce Poor communication between sales team, operation team & supplier. No proper summary to view and allocate job to a specific car for car rental provider.</p>
-    </div>
+    <hr>
+
+
+
+  <!-- End page content -->
   </div>
-
-  <hr>
-
-
-
-<!-- End page content -->
-</div>
+  <% else %>
+  <%= render 'home/banner' %>
+  <%= render 'home/car' %>
+  <%= render 'home/chooseSection' %>
+  <%= render 'home/customer' %>
+  <% end %>
