@@ -4,9 +4,12 @@ class BookingsController < ApplicationController
   end
 
   def show
-    @booking = Booking.find(params[:id])
-    @days = (@booking.end_date - @booking.start_date).floor/(60*60*24)
-
+    if user_signed_in?
+      @booking = Booking.find(params[:id])
+      @days = (@booking.end_date - @booking.start_date).floor/(60*60*24)
+    else
+      redirect_to root_path, notice: "You must login to view this pages"
+    end
   end
 
   def new
@@ -18,11 +21,15 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = current_user.bookings.build(booking_params)
-    if @booking.save
-      redirect_to new_customer_url(booking_id: @booking.id), notice: "Booking was successfully created, Add Your Customer Detail"
+    if user_signed_in?
+      @booking = current_user.bookings.build(booking_params)
+      if @booking.save
+        redirect_to new_customer_url(booking_id: @booking.id), notice: "Booking was successfully created, Add Your Customer Detail"
+      else
+        render :new, status: :unprocessable_entity
+      end
     else
-      render :new, status: :unprocessable_entity
+      redirect_to root_path, notice: "You must login to view this pages"
     end
   end
 

@@ -1,7 +1,24 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
+  config.action_mailer.default_url_options = {  host: 'localhost', port: 3000  }
   # Settings specified here will take precedence over those in config/application.rb.
+
+  config.action_mailer.perform_deliveries = true
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    port: 587,
+    address: 'smtp.mailgun.org',
+    user_name: Rails.application.credentials.dig(Rails.env.to_sym,:smtp, :user_name), # This is the string literal 'apikey', NOT the ID of your API key
+    password: Rails.application.credentials.dig(Rails.env.to_sym,:smtp, :password), # This is the secret sendgrid API key which was issued during API key creation
+    domain: 'smtp.mailgun.org',
+    authentication: :plain,
+    enable_starttls_auto: false
+  }
+  config.action_mailer.default :charset => "utf-8"
+
+
 
   # In the development environment your application's code is reloaded any time
   # it changes. This slows down response time but is perfect for development
@@ -76,6 +93,6 @@ Rails.application.configure do
 
   #In production, :host should be set to the actual host of your application.
 
-  config.action_mailer.default_url_options = { host: 'smtp.mailgun.org', port: 587 }
+
 
 end

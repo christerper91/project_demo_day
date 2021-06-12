@@ -5,6 +5,7 @@
 <table class= "table table-striped table-hover table-bordered ">
   <thead class="table-dark">
     <tr>
+      <th>Created By</th>
       <th>Start Date</th>
       <th>End Date</th>
       <th>Type Of Car</th>
@@ -19,6 +20,7 @@
 
       <% @cars.each do |b| %>
         <tr>
+          <td><%= b.user.email %></td>
           <td><%= b.booking.start_date %></td>
           <td><%= b.booking.end_date %></td>
           <td><%= b.type_of_car %></td>
