@@ -55,17 +55,6 @@ div.footer.1{
       background-repeat: no-repeat;
     }
 
- section.banner_main {
-  background: url(banner.jpg);
-  background-repeat: no-repeat;
-  min-height: 700px;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  background-size: 100% 100%;
-
- }
 
  div.car {
    background-repeat: no-repeat;
