@@ -339,7 +339,7 @@ button {
 /** banner section **/
 
 .banner_main {
-     background-image: url(https://project-demo-day.s3.ap-southeast-1.amazonaws.com/banner.jpg?response-content-disposition=inline&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDAaDmFwLXNvdXRoZWFzdC0xIkYwRAIgTmLkZf2vwDdmoUWTTEhnLyA%2FQYLIzWiAe%2BcLjMo03fQCIHvsxy1arRiz9g4eURuWmVF2jvY9WKfoY9zjIWp85B5pKv8CCOn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMODM3ODE4MTcxMjE3IgxBrPog0Q7HHN7VDQAq0wLqBDg2oVueJb26EHrsZSPfZ%2BqLAQrpQIMh0%2BXGI4ktc%2FxsvyXDycnY%2BDVMOhuY%2FzmST0FRjm%2BEKjvvN23CUhTgNxO%2F9%2FPZ%2Fal3%2BR7bwrQQXEO97LZ51EjEn6uFEHCWwQMnUXEd5%2BWAK6Xcc8NIUpyvS25gjpjlWnjJJEP7Vy3B8DbZMLquVgzRU588q5zVzTwF%2FcpJiI3Ug%2BXNO08mEemVbKdSXGyDGd46VMJTMvfd13kPCutILkviAatJ6YOvU7zRQjen7gwGXtGdJmn0o0%2FclvWRT52%2B%2Fj0y9L%2BjnfQ4RNvtEB5viaZ3d1Ba65xs8JJflHHHvVrKpjd4WjI3FhQ7uOb8Jz8ob2EP9J5Od5m2sjKkFw28DPY%2BlBx%2BGkoZ6eWREHKl292PBkYUgEh78KFMcsZFO%2FntHdsgQ%2BGo3z4JYmAaMxM6SzRJlQQACIJn5ZGo4vQwwuiWhgY6tAIi6gDGd4rmDjvQWZIfre5jwNhvjjpBU5Yv24UH4GLdi4YsbJSqjwThkn6qEv8WI2NJuHcmOHYPUOSYEV7jpaakvboyJuvTHQYEXXWOBE0ZoyqxpadxNZ%2BZ3s%2Fiq19pOo98w4EcCgJaUfZq1xp9C%2BVEoXf3uAgT6%2BhpdZ65w9tKJ4xVU9OJzfxyluMJqLBm%2FIVhJWgUKBF2NecM6wPsm5tRgAgdyNG3rorE4mvYLzdAnYwEqTO%2B2nhNS8ZRW367rPRECVAzAm6ILwGWepiya1ErrUQR%2F7W21P9vxHXikHCwv2%2FoElc0sudckoZbdMKwEjh3BCuhzPTVEt2E2xeBbFtXFtdj9R8XrA%2Byzs3BkKQiU6zZ1ngw33FJbBLusMh04D7DMWfH5CfERQiTKfCJwRXep07fPg%3D%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20210613T113542Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIA4GEO2X5IQE5SGI6U%2F20210613%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Signature=acbd014e257c9663008a1c77acba521f739e0f2e1eeae284e04a5260823454d1);
+     background-image: image(banner.jpg);
      background-repeat: no-repeat;
      min-height: 700px;
      display: flex;
