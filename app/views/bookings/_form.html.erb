@@ -1,37 +1,51 @@
-<%= form_with(model: booking) do |form| %>
-  <% if booking.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
 
-      <ul>
-        <% booking.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+    <!-- Icon -->
 
-  <div class="field mb-3">
-    <%= form.label :start_date %>
-    <%= form.datetime_local_field :start_date, class:"form-control"%>
+
+    <!-- Login Form -->
+    <%= form_with(model: booking) do |form| %>
+      <% if booking.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
+
+          <ul>
+            <% booking.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="field mb-3">
+        <%= form.label :start_date %>
+        <%= form.datetime_local_field :start_date, class:"form-control"%>
+      </div>
+
+      <div class="field mb-3">
+        <%= form.label :end_date %>
+        <%= form.datetime_local_field :end_date, class:"form-control"%>
+      </div>
+
+      <div class="field mb-3">
+        <%= form.label :pickup_location %>
+        <%= form.text_field :pickup_location, class:"form-control" %>
+      </div>
+
+      <div class="field mb-3">
+        <%= form.label :dropoff_location %>
+        <%= form.text_field :dropoff_location, class:"form-control" %>
+      </div>
+
+      <div class="actions">
+        <%= form.submit "Create New Booking", class: 'btn btn-primary'%>
+      </div>
+    <% end %>
+
+    <!-- Remind Passowrd -->
+
+
   </div>
-
-  <div class="field mb-3">
-    <%= form.label :end_date %>
-    <%= form.datetime_local_field :end_date, class:"form-control"%>
-  </div>
-
-  <div class="field mb-3">
-    <%= form.label :pickup_location %>
-    <%= form.text_field :pickup_location, class:"form-control" %>
-  </div>
-
-  <div class="field mb-3">
-    <%= form.label :dropoff_location %>
-    <%= form.text_field :dropoff_location, class:"form-control" %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit "Create New Booking", class: 'btn btn-primary'%>
-  </div>
-<% end %>
+</div>

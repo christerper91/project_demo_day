@@ -1,49 +1,53 @@
-<%= form_with(model: @car) do |form| %>
-  <% if @car.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@car.errors.count, "error") %> prohibited this car from being saved:</h2>
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <%= form_with(model: @car) do |form| %>
+      <% if @car.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@car.errors.count, "error") %> prohibited this car from being saved:</h2>
 
-      <ul>
-        <% @car.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+          <ul>
+            <% @car.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
 
-  <div class="field mb-3">
-    <%= form.label :type_of_car %>
-    <%= form.text_field :type_of_car, class: "form-control" %>
+      <div class="field mb-3">
+        <%= form.label :type_of_car %>
+        <%= form.text_field :type_of_car, class: "form-control" %>
+      </div>
+
+      <div class="field mb-3">
+        <%= form.label :car_plate_no %>
+        <%= form.text_field :car_plate_no, class: "form-control" %>
+      </div>
+
+      <div class="field mb-3">
+        <%= form.label :car_agent_rate %>
+        <%= form.number_field :car_agent_rate, class: "form-control" %>
+      </div>
+
+      <div class="field mb-3">
+        <%= form.label :car_selling_rate %>
+        <%= form.number_field :car_selling_rate, class: "form-control" %>
+      </div>
+
+      <div class="field mb-3">
+        <%= form.hidden_field :customer_id %>
+      </div>
+
+      <div class="field">
+        <%= form.hidden_field :booking_id %>
+      </div>
+
+      <div class="field">
+        <%= form.hidden_field :supplier_id %>
+      </div>
+
+      <div class="actions">
+        <%= form.submit 'FINISH', class: 'btn btn-primary' %>
+      </div>
+    <% end %>
   </div>
-
-  <div class="field mb-3">
-    <%= form.label :car_plate_no %>
-    <%= form.text_field :car_plate_no, class: "form-control" %>
-  </div>
-
-  <div class="field mb-3">
-    <%= form.label :car_agent_rate %>
-    <%= form.number_field :car_agent_rate, class: "form-control" %>
-  </div>
-
-  <div class="field mb-3">
-    <%= form.label :car_selling_rate %>
-    <%= form.number_field :car_selling_rate, class: "form-control" %>
-  </div>
-
-  <div class="field mb-3">
-    <%= form.hidden_field :customer_id %>
-  </div>
-
-  <div class="field">
-    <%= form.hidden_field :booking_id %>
-  </div>
-
-  <div class="field">
-    <%= form.hidden_field :supplier_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit 'FINISH', class: 'btn btn-primary' %>
-  </div>
-<% end %>
+</div>
