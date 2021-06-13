@@ -339,7 +339,7 @@ button {
 /** banner section **/
 
 .banner_main {
-     background-image: image-url(banner.jpg);
+     background-image: url(banner.jpg);
      background-repeat: no-repeat;
      min-height: 700px;
      display: flex;
@@ -489,7 +489,7 @@ button {
 
 .bestCar {
      margin-top: 90px;
-     background: url(../images/bg.jpg);
+     background-image: url(bg.jpg);
      background-repeat: no-repeat;
      background-size: 100% 100%;
      padding: 100px 0
@@ -906,7 +906,7 @@ button {
           padding-top: 6px;
      }
      .navigation.navbar-dark .navbar-toggler-icon {
-          background: url(menu_icon.png);
+          background-image: url(menu_icon.png);
           background-repeat: no-repeat;
      }
      .carousel-control-next-icon,
@@ -990,7 +990,7 @@ button {
           padding: 0px 19px 40px 20px;
      }
      .navigation.navbar-dark .navbar-toggler-icon {
-          background: url(menu_icon.png);
+          background-image: url(menu_icon.png);
           background-repeat: no-repeat;
      }
      .carousel-control-next-icon,
