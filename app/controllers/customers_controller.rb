@@ -1,4 +1,5 @@
 class CustomersController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
   def index
     @customers = Customer.all
   end
@@ -8,7 +9,7 @@ class CustomersController < ApplicationController
     @customer = Customer.find(params[:id])
     @booking = @customer.booking
     @days = (@booking.end_date - @booking.start_date).floor/(60*60*24)
-  
+
   end
 
   def new
@@ -42,7 +43,7 @@ class CustomersController < ApplicationController
   def destroy
     @customers = Customer.find(params[:id])
     @customers.destroy
-
+    redirect_to @customers, notice: "Customer was successfully deleted"
   end
 
   private

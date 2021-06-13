@@ -1,4 +1,5 @@
 class SuppliersController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
   def index
     @suppliers = Supplier.all
   end
@@ -40,7 +41,7 @@ class SuppliersController < ApplicationController
   def destroy
     @suppliers = Supplier.find(params[:id])
     @suppliers.destroy
-
+    redirect_to @suppliers, notice: "suppliers was successfully deleted"
   end
 
   private
