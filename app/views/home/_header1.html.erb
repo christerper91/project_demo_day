@@ -43,7 +43,11 @@
                         <% end %>
                      </ul>
                      <% if user_signed_in? || admin_signed_in?%>
-                     <li> Welcome Back, <%= current_user.email%> </li>
+                       <% if user_signed_in? %>
+                       <li> Welcome Back, <%= current_user.email%> </li>
+                       <% else %>
+                       <li> Welcome Back, <%= current_admin.email%> </li>
+                       <% end %>
                      <div class="sign_btn"><%= link_to 'Logout', destroy_user_session_path, method: :delete, class:"nav-link" %></div>
                      <% else %>
                      <div class="sign_btn"><%= link_to 'Login', new_user_session_path, class:"nav-link" %></div>
