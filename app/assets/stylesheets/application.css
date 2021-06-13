@@ -44,13 +44,24 @@ div.footer.1{
 
  }
 
- .navigation.navbar-dark .navbar-toggler-icon {
-      background: url(menu_icon.png);
-      background-repeat: no-repeat;
+ .navigation.navbar-dark .navbar-toggler {
+   border: inherit;
+   float: right;
+   margin-right: 2px;
+   padding-top: 6px;
+ }
+
+ button.navbar-toggler{
+   border: inherit;
+   float: right;
+   margin-right: 2px;
+   padding-top: 6px;
+   background: url(menu_icon.png);
+   background-repeat: no-repeat;
+
  }
 
  .navigation.navbar-dark .navbar-toggler-icon {
-      background: url(menu_icon.png);
       background-repeat: no-repeat;
     }
 

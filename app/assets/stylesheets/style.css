@@ -338,8 +338,8 @@ button {
 
 /** banner section **/
 
-section.banner_main {
-     background: url(banner.png);
+.banner_main {
+     background: url(banner.jpg);
      background-repeat: no-repeat;
      min-height: 700px;
      display: flex;
@@ -489,7 +489,7 @@ section.banner_main {
 
 .bestCar {
      margin-top: 90px;
-     background: url(bg.jpg);
+     background: url(../images/bg.jpg);
      background-repeat: no-repeat;
      background-size: 100% 100%;
      padding: 100px 0
