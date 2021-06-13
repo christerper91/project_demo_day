@@ -339,6 +339,7 @@ button {
 /** banner section **/
 
 .banner_main {
+     background-image: url(banner.jpg);
      background-repeat: no-repeat;
      min-height: 700px;
      display: flex;
