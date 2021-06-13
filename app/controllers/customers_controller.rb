@@ -1,5 +1,6 @@
 class CustomersController < ApplicationController
   before_action :authenticate_user!
+  before_action :correct_user, only: [:edit, :update, :destroy]
   def index
     @customers = Customer.all
   end
@@ -44,6 +45,11 @@ class CustomersController < ApplicationController
     @customers = Customer.find(params[:id])
     @customers.destroy
     redirect_to @customers, notice: "Customer was successfully deleted"
+  end
+
+  def correct_user
+    @customer = current_user.customers.find_by(id: params[:id])
+    redirect_to customers_path, notice: "Not Authorize User To Perform This Action" if @customer.nil?
   end
 
   private

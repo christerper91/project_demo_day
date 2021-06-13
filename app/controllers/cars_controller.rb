@@ -1,5 +1,6 @@
 class CarsController < ApplicationController
   before_action :authenticate_user!
+  before_action :correct_user, only: [:edit, :update, :destroy]
   def index
     @cars = Car.all
   end
@@ -49,6 +50,11 @@ class CarsController < ApplicationController
       @cars = Car.find(params[:id])
       @cars.destroy
       redirect_to @cars, notice: "Car was successfully deleted"
+  end
+
+  def correct_user
+    @car = current_user.cars.find_by(id: params[:id])
+    redirect_to cars_path, notice: "Not Authorize User To Perform This Action" if @car.nil?
   end
 
   private

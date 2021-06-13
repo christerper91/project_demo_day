@@ -1,5 +1,6 @@
 class SuppliersController < ApplicationController
   before_action :authenticate_user!
+  before_action :correct_user, only: [:edit, :update, :destroy]
   def index
     @suppliers = Supplier.all
   end
@@ -42,6 +43,11 @@ class SuppliersController < ApplicationController
     @suppliers = Supplier.find(params[:id])
     @suppliers.destroy
     redirect_to @suppliers, notice: "suppliers was successfully deleted"
+  end
+
+  def correct_user
+    @supplier = current_user.suppliers.find_by(id: params[:id])
+    redirect_to suppliers_path, notice: "Not Authorize User To Perform This Action" if @supplier.nil?
   end
 
   private
