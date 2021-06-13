@@ -338,7 +338,7 @@ button {
 
 /** banner section **/
 
-.banner_main {
+section.banner_main {
      background: url(banner.png);
      background-repeat: no-repeat;
      min-height: 700px;

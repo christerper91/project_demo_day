@@ -33,14 +33,12 @@ div.footer.1{
  footer {
 
     position: fixed;
-    height: XXX;
     bottom: 0;
     width: 100%;
  }
 
  header {
    position: fixed;
-   height: XXX;
    top: 0;
    width: 100%;
 
