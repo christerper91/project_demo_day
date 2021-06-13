@@ -339,7 +339,6 @@ button {
 /** banner section **/
 
 .banner_main {
-     background-image: url(banner.jpg);
      background-repeat: no-repeat;
      min-height: 700px;
      display: flex;
@@ -373,7 +372,7 @@ button {
 
 .text-bg span {
      font-family: 'Righteous', cursive;
-     color: #f6d601;
+     color: #111103;
      font-size: 40px;
      line-height: 50px;
      font-weight: bold;
