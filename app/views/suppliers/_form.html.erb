@@ -30,7 +30,7 @@
 
       <div class="field mb-3">
         <%= form.label :company_bank_account %>
-        <%= form.text_field :company_bank_account, class: "form-control" %>
+        <%= form.select :company_bank_account, ["CIMB", "RHB", "MAYBANK", "PBB"], class: "form-control" %>
       </div>
 
       <div class="field mb-3">

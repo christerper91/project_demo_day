@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_05_075615) do
+ActiveRecord::Schema.define(version: 2021_06_14_042051) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -107,7 +107,7 @@ ActiveRecord::Schema.define(version: 2021_06_05_075615) do
     t.integer "company_contact"
     t.string "company_email"
     t.string "company_bank_account"
-    t.integer "company_number_account"
+    t.bigint "company_number_account"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["booking_id"], name: "index_suppliers_on_booking_id"
